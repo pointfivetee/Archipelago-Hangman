@@ -1,6 +1,6 @@
 # AP Hangman
 
-AP Hangman is a meta-game where you must find all the letters in a random secret word selected during multiworld generation. The locations of all letters start out hinted, so it's up to you to make educated guesses as to which letters to pursue. For example, you might not bother to hint for the items that will help you reach the letter `X`... but that may change once you've filled in `E_AMPLE`.
+AP Hangman is a meta-game for the [Archipelago Multiworld Randomizer](https://archipelago.gg/) where you must find all the letters in a secret word randomly selected during multiworld generation. The locations of all letters start out hinted, so it's up to you to make educated guesses as to which letters to pursue. For example, you might not bother to hint for the items that will help you reach the letter `X`... but that may change once you've filled in `E_AMPLE`.
 
 ## How does it work?
 
