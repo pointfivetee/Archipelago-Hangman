@@ -9,6 +9,7 @@ from .Locations import get_location_name_to_id, get_location_table
 from .Regions import get_region_table
 from typing import Any, Dict, Optional, Callable
 from worlds.LauncherComponents import Component, components, Type, launch_subprocess
+from .data.words import all_words
 
 def launch_client():
     from .Client import launch
@@ -130,15 +131,9 @@ def connect(world: MultiWorld, player: int, source: str, target: str, rule: Opti
     targetRegion = world.get_region(target, player)
     sourceRegion.connect(targetRegion, rule=rule)
 
-# source: https://github.com/taikuukaits/SimpleWordlists/blob/master/Thesaurus-Synonyms-Common.txt
 min_word_length = 6
 def get_random_word():
-    script_dir = os.path.dirname(__file__)
-    rel_path = "data/words.txt"
-    abs_file_path = os.path.join(script_dir, rel_path)
-    with open(abs_file_path, "r") as file:
-        words = [line.strip() for line in file]
-    words = list(filter(lambda word: len(word) > min_word_length, words))
+    words = list(filter(lambda word: len(word) > min_word_length, all_words))
     return random.choice(words)
 
 class HangmanItem(Item):
